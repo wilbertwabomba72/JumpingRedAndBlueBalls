@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jumping Red & Blue</title>
+  <meta name="description" content="Jumping Red & Blue is a minimalist rhythm arcade game about timing, focus, and flow.">
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #07090d;
+      --panel: #1d1f26;
+      --line: rgba(255,255,255,.11);
+      --text: #f4f6fb;
+      --muted: #a7acb8;
+      --red: #e83b36;
+      --blue: #4b8ff0;
+      --gold: #ffcf55;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        linear-gradient(var(--line) 1px, transparent 1px),
+        linear-gradient(90deg, var(--line) 1px, transparent 1px),
+        var(--bg);
+      background-size: 92px 92px;
+    }
+
+    main {
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .hero {
+      min-height: 92vh;
+      display: grid;
+      grid-template-columns: 1fr minmax(260px, 380px);
+      gap: 56px;
+      align-items: center;
+      padding: 64px 0;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(56px, 10vw, 116px);
+      line-height: .9;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+
+    .subtitle {
+      margin: 24px 0 0;
+      max-width: 620px;
+      color: var(--muted);
+      font-size: 22px;
+      line-height: 1.45;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 34px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 54px;
+      padding: 0 28px;
+      border: 2px solid rgba(255,255,255,.22);
+      border-radius: 8px;
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 800;
+      text-transform: uppercase;
+      background: rgba(29,31,38,.92);
+    }
+
+    .button.primary {
+      border-color: rgba(255,255,255,.18);
+      background: #b5312d;
+    }
+
+    .phone {
+      justify-self: center;
+      width: min(100%, 360px);
+      border-radius: 34px;
+      box-shadow: 0 30px 90px rgba(0,0,0,.55);
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      padding: 0 0 64px;
+    }
+
+    .feature {
+      min-height: 150px;
+      padding: 24px;
+      border: 2px solid rgba(255,255,255,.12);
+      border-radius: 8px;
+      background: rgba(29,31,38,.72);
+    }
+
+    .feature h2 {
+      margin: 0 0 12px;
+      font-size: 22px;
+      letter-spacing: 0;
+    }
+
+    .feature p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .screens {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      padding-bottom: 72px;
+    }
+
+    .screens img {
+      width: 100%;
+      display: block;
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,.12);
+    }
+
+    footer {
+      padding: 28px 0 44px;
+      color: var(--muted);
+      border-top: 1px solid rgba(255,255,255,.12);
+    }
+
+    footer a { color: var(--text); }
+
+    @media (max-width: 820px) {
+      .hero { grid-template-columns: 1fr; gap: 32px; }
+      .phone { width: min(72vw, 340px); }
+      .features { grid-template-columns: 1fr; }
+      .screens { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="hero">
+      <div>
+        <h1>Jumping<br>Red & Blue</h1>
+        <p class="subtitle">A minimalist rhythm arcade game where every tap moves the next ball forward. Follow the path, stay on beat, and chase all 150 stars.</p>
+        <div class="actions">
+          <a class="button primary" href="#screenshots">Screenshots</a>
+          <a class="button" href="privacy.html">Privacy Policy</a>
+        </div>
+      </div>
+      <img class="phone" src="AppStoreAssets/source/01-main-menu.png" alt="Jumping Red & Blue main menu">
+    </section>
+
+    <section class="features" aria-label="Game features">
+      <article class="feature">
+        <h2>Tap The Beat</h2>
+        <p>Switch movement between the red and blue balls with crisp one-tap rhythm controls.</p>
+      </article>
+      <article class="feature">
+        <h2>50 Levels</h2>
+        <p>Clear handcrafted-feeling generated stages that steadily increase in speed and precision.</p>
+      </article>
+      <article class="feature">
+        <h2>Stars & Progress</h2>
+        <p>Earn star ratings, unlock level pages, and keep your progress saved locally.</p>
+      </article>
+    </section>
+
+    <section id="screenshots" class="screens" aria-label="Screenshots">
+      <img src="AppStoreAssets/source/01-main-menu.png" alt="Main menu">
+      <img src="AppStoreAssets/source/02-level-select.png" alt="Level select">
+      <img src="AppStoreAssets/source/03-gameplay.png" alt="Gameplay">
+      <img src="AppStoreAssets/source/04-stage-clear.png" alt="Stage clear">
+    </section>
+
+    <footer>
+      <p>Jumping Red & Blue is a single-player rhythm arcade game for iPhone and iPad. <a href="privacy.html">Privacy Policy</a></p>
+    </footer>
+  </main>
+</body>
+</html>
